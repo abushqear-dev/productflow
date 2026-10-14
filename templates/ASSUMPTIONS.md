@@ -6,4 +6,4 @@ Every assumption the agent makes is recorded here, labelled with the stage that 
 |----|-------|------------|-----|--------|
 | A-1 |  |  |  | open |
 
-Status: `open`, `confirmed` (user agreed), `replaced` (user decided otherwise).
+Status: `open` (not yet answered), `accepted` (the user approved the document that contains it, without answering it individually), `confirmed` (the user explicitly agreed to this assumption), `replaced` (the user decided otherwise). Approving a document never makes an assumption `confirmed`; it makes it `accepted` at most.

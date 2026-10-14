@@ -19,11 +19,12 @@ Run this stage with the loop in `${CLAUDE_PLUGIN_ROOT}/skills/product/loop.md` a
 2. **Draft** `docs/01-prd.md` from `${CLAUDE_PLUGIN_ROOT}/templates/prd.md`. Rules for content:
    - State at the top which source it is based on (BRD, Vision, or both).
    - Every FR-n and NFR-n names where it comes from: an input file and section, a user answer, or an assumption ID. If you cannot name a source, it is an assumption: label it and add it to `.productflow/ASSUMPTIONS.md`. Do not add features the inputs never mention.
+   - A requirement with no input sentence or user answer behind it, only an assumption, gets priority `proposed` and is also listed under "Proposed additions" in section 5. Keep those few and keep the rest within what the inputs say.
    - IDs are FR-1, FR-2, ... and NFR-1, ... in order, never reused.
    - Write requirements a tester could check. Replace "fast" with a measure, or ask.
 3. **Review.** Use the `productflow:review` skill on the draft, and fix what it finds.
 4. **Ask**, once, in a numbered batch, only what the inputs do not answer and that blocks a section or changes scope. Each question: the question, why it matters, your suggested default.
-5. **Approve.** Show the PRD and ask: "Do you approve the PRD? Reply approve, or tell me what to change." On approval run `pf.mjs approve 1`, then `productflow:trace` to seed `.productflow/TRACE.md`, then say "Handing off to Stage 2: PRD".
+5. **Approve.** Show the PRD and ask: "Do you approve the PRD? Reply approve, or tell me what to change." On approval run `pf.mjs approve 1`, set the PRD's `open` assumptions to `accepted` (not `confirmed`) in `.productflow/ASSUMPTIONS.md`, then `productflow:trace` to seed `.productflow/TRACE.md`, then say "Handing off to Stage 2: PRD".
 
 ## Done when
 

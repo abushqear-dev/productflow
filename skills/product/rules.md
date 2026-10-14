@@ -13,6 +13,8 @@
 - Ask when a gap blocks a required section or changes scope or behaviour. Otherwise record a labelled assumption and continue.
 - If the user does not answer or says "you decide": use your suggested default, record it as an assumption, continue. This never applies to approval: without explicit approval, do not hand off.
 - Never invent an answer and present it as the user's.
+- Approving a document does not confirm its assumptions. After approval, set the document's `open` assumptions to `accepted`. Use `confirmed` only for an assumption the user explicitly agreed to.
+- Keep a document close to its inputs. A requirement that rests only on an assumption (no input sentence or user answer behind it) is marked `proposed` in the Priority column and listed in a "Proposed additions" section, so the user can accept or drop it. Do not add lifecycle, edge-case or admin requirements the inputs never imply without marking them `proposed`.
 
 ## Default section lists
 

@@ -14,7 +14,7 @@ Run this after every draft of a stage document, before asking the user to approv
    - the paths of the earlier documents and the recorded inputs in `docs/input/`,
    - for stages after the first, `.productflow/ASSUMPTIONS.md` and `.productflow/TRACE.md`.
 
-   Do not tell it the draft is good, and do not summarise the draft for it.
+   Do not tell it the draft is good, and do not summarise the draft for it. Run the reviewer in the foreground (`run_in_background: false`) so its report comes back in this same turn. Do not end your turn to wait for it, and do not show the user a draft before the report is in.
 3. **Act on the report.** Fix every real issue. If you disagree with a finding, check it against the sources before dismissing it, and record the reason. Findings about missing information go to the user as questions, not to your imagination.
 4. **Re-review** after substantial changes. Stop when the reviewer returns `CLEAN` or every remaining finding is a user question or a recorded assumption.
 

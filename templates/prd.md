@@ -28,6 +28,8 @@
 |----|-------------|----------|--------|
 | FR-1 |  | must / should / could | <input file and section, or "assumption A-n"> |
 
+**Proposed additions:** <the requirements above marked `proposed`, one line each, so the user can accept or drop them. "None" if there are none.>
+
 ## 6. Non-functional requirements
 | ID | Requirement | Measure | Source |
 |----|-------------|---------|--------|
