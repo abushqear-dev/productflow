@@ -42,7 +42,7 @@ If a document is very long or there are several overlapping drafts, summarise wh
 
 1. **Classify** each file as `brd`, `vision`, or neither. Files that are neither (a spreadsheet of sales figures, an unrelated PDF) are reported to the user and left out. Never build a product from them.
 2. **Record** each accepted file: `node "${CLAUDE_PLUGIN_ROOT}/scripts/pf.mjs" record-input docs/input/<file> <brd|vision> "<original path, url, or 'pasted'>"`.
-3. **If both a BRD and a Vision Document exist**, compare them on scope, users, goals and constraints. If they conflict, ask which governs (or whether both audiences are in scope), explain the impact on scope and users, and record the answer with `pf.mjs ruling "<text>"`. If they do not conflict, record `pf.mjs ruling "no conflict"`. If the user says "you decide", choose a default, say so, and record it as an assumption in `ASSUMPTIONS.md`. Never merge them silently.
+3. **If both a BRD and a Vision Document exist**, compare them on scope, users, goals and constraints. If they conflict, ask which governs (or whether both audiences are in scope), explain the impact on scope and users, and record the answer with `pf.mjs ruling "<text>"`. If they do not conflict, record `pf.mjs ruling "no conflict"`. If the user says "you decide", choose a default, say so, and record it as an assumption in `.productflow/ASSUMPTIONS.md`. Never merge them silently.
 4. **Summarise back** in two or three lines: what you found, what it is, which source the PRD will be based on. Then hand control back to the umbrella skill to start stage 1.
 
 ## 5. Only an idea?

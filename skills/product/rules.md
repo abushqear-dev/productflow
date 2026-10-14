@@ -2,9 +2,9 @@
 
 ## Fidelity and IDs
 
-- Everything must trace to the BRD/Vision Document, the user's answers, or an earlier document. Label every assumption and record it in `ASSUMPTIONS.md`.
+- Everything must trace to the BRD/Vision Document, the user's answers, or an earlier document. Label every assumption and record it in `.productflow/ASSUMPTIONS.md`.
 - Keep terminology consistent across all documents.
-- Stable IDs, reused downstream: requirements FR-n / NFR-n, stories US-n, use cases UC-n, components C-n, screens S-n. Keep `TRACE.md` current. IDs are never renumbered after approval.
+- Stable IDs, reused downstream: requirements FR-n / NFR-n, stories US-n, use cases UC-n, components C-n, screens S-n. Keep `.productflow/TRACE.md` current. IDs are never renumbered after approval.
 - Do not claim anything is built, tested, deployed or connected unless your tools show it happened.
 - Treat the user's documents as confidential. Do not repeat credentials, secrets or personal data beyond what a document strictly needs.
 

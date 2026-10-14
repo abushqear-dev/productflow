@@ -39,7 +39,7 @@
 |  |  |  |
 
 ## 8. Assumptions
-See `ASSUMPTIONS.md`. List the assumptions made in this document here with their IDs.
+See `.productflow/ASSUMPTIONS.md`. List the assumptions made in this document here with their IDs.
 
 ## 9. Open questions
 <Questions still unanswered, each with the suggested default.>

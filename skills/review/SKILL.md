@@ -12,7 +12,7 @@ Run this after every draft of a stage document, before asking the user to approv
    - the path of the draft,
    - the path of the Stage Skill Instruction (or paste it),
    - the paths of the earlier documents and the recorded inputs in `docs/input/`,
-   - for stages after the first, `ASSUMPTIONS.md` and `TRACE.md`.
+   - for stages after the first, `.productflow/ASSUMPTIONS.md` and `.productflow/TRACE.md`.
 
    Do not tell it the draft is good, and do not summarise the draft for it.
 3. **Act on the report.** Fix every real issue. If you disagree with a finding, check it against the sources before dismissing it, and record the reason. Findings about missing information go to the user as questions, not to your imagination.

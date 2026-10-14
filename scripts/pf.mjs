@@ -30,7 +30,7 @@ const saveState = (root, state) => {
   state.updated = new Date().toISOString();
   fs.mkdirSync(path.dirname(statePath(root)), { recursive: true });
   fs.writeFileSync(statePath(root), JSON.stringify(state, null, 2) + '\n');
-  fs.writeFileSync(path.join(root, 'STATUS.md'), renderStatus(state));
+  fs.writeFileSync(path.join(path.dirname(statePath(root)), 'STATUS.md'), renderStatus(state));
 };
 
 const newState = () => ({
@@ -85,7 +85,7 @@ const commands = {
     const root = projectDir();
     for (const dir of ['docs/input', 'docs']) fs.mkdirSync(path.join(root, dir), { recursive: true });
     for (const f of ['ASSUMPTIONS.md', 'TRACE.md']) {
-      const dest = path.join(root, f);
+      const dest = path.join(root, '.productflow', f);
       if (!fs.existsSync(dest)) fs.copyFileSync(path.join(PLUGIN_ROOT, 'templates', f), dest);
     }
     const state = loadState(root) || newState();
@@ -207,8 +207,8 @@ const commands = {
     const rel = path.relative(root, path.resolve(root, target)).split(path.sep).join('/');
     if (rel.startsWith('..')) process.exit(0);
 
-    if (rel === 'STATUS.md' || rel.startsWith('.productflow/')) {
-      fail('Productflow: STATUS.md and .productflow/ are managed by scripts/pf.mjs. Use its commands (start, approve, reopen) instead of editing them.', 2);
+    if (rel === '.productflow/state.json' || rel === '.productflow/STATUS.md') {
+      fail('Productflow: state.json and STATUS.md are managed by scripts/pf.mjs. Use its commands (start, approve, reopen) instead of editing them.', 2);
     }
     if (rel.startsWith('docs/input/') && state.stages['1'].status === 'approved') {
       fail('Productflow: the inputs are frozen because the PRD is approved. If an input has changed, stop and tell the user (upstream-change skill).', 2);

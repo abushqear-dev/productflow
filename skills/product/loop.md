@@ -15,7 +15,7 @@ Every document stage runs the same loop. Stage 6 reuses it with an implementatio
 1. Header: "Stage N of 6: <document name>".
 2. The Stage Skill Instruction (short).
 3. The document.
-4. Assumptions: what you assumed and why. Also add each to `ASSUMPTIONS.md`.
+4. Assumptions: what you assumed and why. Also add each to `.productflow/ASSUMPTIONS.md`.
 5. Open questions, if any.
 6. The approval request.
 

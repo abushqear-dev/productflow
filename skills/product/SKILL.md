@@ -7,7 +7,7 @@ description: Entry point for the Productflow process. Use when the user wants to
 
 You are the router for the Productflow process. You do not write product documents yourself unless no stage skill exists for the stage (see Stage skills). You read state, pick the next step, enforce the rules, and report.
 
-State tool: `node "${CLAUDE_PLUGIN_ROOT}/scripts/pf.mjs" <command>` with commands `init`, `start <n>`, `approve <n>`, `reopen <n>`, `status`. The tool owns `STATUS.md` and `.productflow/`. Never edit those by hand; a hook blocks it.
+State tool: `node "${CLAUDE_PLUGIN_ROOT}/scripts/pf.mjs" <command>` with commands `init`, `start <n>`, `approve <n>`, `reopen <n>`, `status`. The tool owns `.productflow/state.json` and `.productflow/STATUS.md`. Never edit those by hand; a hook blocks it. `.productflow/ASSUMPTIONS.md` and `.productflow/TRACE.md` are yours to keep current.
 
 ## Every run
 

@@ -16,4 +16,4 @@ Written before the document, from the stage input only. Keep it to one page. Do 
 - Every item in the stage input is covered or explicitly listed as out of scope.
 - Nothing contradicts an earlier document or the governing input.
 - Every unknown is asked or recorded as a labelled assumption.
-- IDs are used consistently and `TRACE.md` is updated.
+- IDs are used consistently and `.productflow/TRACE.md` is updated.

@@ -52,11 +52,11 @@ To pick up later, run `claude` in the same folder and `/productflow:product` aga
 | `intake` | Collects the inputs (file, link or text), brings them into `docs/input/`, classifies them, rules on conflicts. |
 | `prd` | Stage 1: writes the PRD. |
 | `review` | Independent review of every draft by a separate `reviewer` subagent, plus the trace check. |
-| `trace` | Keeps `TRACE.md` current and checks IDs (FR, NFR, US, UC, C, S) across documents. |
+| `trace` | Keeps `.productflow/TRACE.md` current and checks IDs (FR, NFR, US, UC, C, S) across documents. |
 | `upstream-change` | Handles a gap found in an approved document: stop, ask, reopen, re-check. |
 | `status` | Shows where the project stands. |
 
-State lives in files in your project: `.productflow/state.json` (source of truth), `STATUS.md` (generated), `docs/input/`, `docs/0N-*.md`, `ASSUMPTIONS.md`, `TRACE.md`, `app/`.
+State lives in `.productflow/` in your project: `state.json` (source of truth), `STATUS.md` (generated), `ASSUMPTIONS.md` and `TRACE.md`. Your documents are in `docs/input/` and `docs/0N-*.md`, and the built product is in `app/`. The project root holds only `.productflow/`, `docs/` and `app/`.
 
 A hook enforces the rules: a stage cannot be written before the previous one is approved, approved documents and the inputs cannot be edited silently, and `app/` stays locked until all five documents are approved.
 
