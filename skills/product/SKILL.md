@@ -18,20 +18,17 @@ State tool: `node "${CLAUDE_PLUGIN_ROOT}/scripts/pf.mjs" <command>` with command
 
 ## Intake (new project)
 
-- Look in `docs/input/` for a Business Requirements Document (BRD), a Vision Document, or both. If the user pasted or described one instead, save it there.
-- Neither exists: do not start. Explain that at least one is required and what each should cover. Offer to treat a short written description of the product as a minimal Vision Document.
-- Both exist and conflict on scope, users, goals or constraints: ask which governs before the PRD is finalised.
-- Then run `init`, record the mode (default `guided`), and start stage 1.
+Run `init` (it is safe to repeat), then use the `productflow:intake` skill. It looks for a BRD and/or Vision Document in `docs/input/`, asks the user for them if they are missing (as a file, a link or pasted text), brings them into `docs/input/`, classifies them, rules on conflicts, and records them. Stage 1 cannot start until it has recorded at least one input. When intake is done, start stage 1.
 
 ## Stage skills
 
 The chain is fixed: 1 PRD, 2 User Stories and Use Cases, 3 System Architecture Document, 4 Technical Design Document, 5 UI/UX Study and Wireframes, 6 Implementation.
 
-Each stage will have its own skill (`productflow:prd`, `productflow:stories`, and so on). Until one exists, run that stage yourself with the generic loop in [loop.md](loop.md), using the section lists in [rules.md](rules.md). Do not skip a stage because its skill is missing.
+Each stage has its own skill when one exists: `productflow:prd` is available now. Support skills: `productflow:review` (run on every draft), `productflow:trace` and `productflow:upstream-change`. For a stage with no skill yet (stories, SAD, TDD, UI/UX, build), run it yourself with the generic loop in [loop.md](loop.md), using the section lists in [rules.md](rules.md), and still use `review` on each draft. Do not skip a stage because its skill is missing.
 
 ## Refusals and exceptions
 
 - User asks to skip ahead or reorder: decline, explain that each document is the next one's input, offer a fast pass through the earlier stages.
-- A later stage exposes a gap or contradiction in an approved document: stop, report it, ask whether to revise the earlier document. If they agree, run `reopen <n>`, revise, and re-check every later document. Never edit an approved document silently.
+- A later stage exposes a gap or contradiction in an approved document: use the `productflow:upstream-change` skill. Never edit an approved document silently.
 - Implementation needs a stack, repository or hosting that the SAD and TDD do not settle: go back to the SAD and TDD, iterate until they do, and get approval. Do not choose it yourself.
 - Implementation is local only. Never deploy.

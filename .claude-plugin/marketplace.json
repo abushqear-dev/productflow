@@ -1,0 +1,12 @@
+{
+  "name": "productflow-plugins",
+  "description": "Productflow: a Claude Code plugin that runs the whole product-building process.",
+  "owner": { "name": "Mohammed Abu-Shqear" },
+  "plugins": [
+    {
+      "name": "productflow",
+      "source": "./",
+      "description": "BRD/Vision to five approved documents to a locally running prototype, with one entry skill, approval gates and file-based state."
+    }
+  ]
+}
