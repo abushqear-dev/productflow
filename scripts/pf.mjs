@@ -83,7 +83,7 @@ const firstUnapprovedBefore = (state, n) =>
 const commands = {
   init() {
     const root = projectDir();
-    for (const dir of ['docs/input', 'docs']) fs.mkdirSync(path.join(root, dir), { recursive: true });
+    for (const dir of ['docs/input', '.productflow']) fs.mkdirSync(path.join(root, dir), { recursive: true });
     for (const f of ['ASSUMPTIONS.md', 'TRACE.md']) {
       const dest = path.join(root, '.productflow', f);
       if (!fs.existsSync(dest)) fs.copyFileSync(path.join(PLUGIN_ROOT, 'templates', f), dest);
