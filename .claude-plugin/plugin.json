@@ -1,7 +1,7 @@
 {
   "name": "productflow",
   "displayName": "Productflow",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Runs the whole product-building process: BRD/Vision to five approved documents to a locally running prototype, with one entry skill, approval gates and file-based state.",
   "author": { "name": "Mohammed Abu-Shqear" },
   "license": "MIT",
